@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic HTML document setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="static/PageFourthStyle.css">
+</head>
+<body data-energy="hydrogen">
+    
+    <!-- Header section with logo and navigation menu -->
+    <header>
+        <div class="logo-container">
+            <!-- Logo image -->
+            <img src="/static/Images/Green-hydrogen_icon.jpg" alt="Icon image">
+        </div>
+        <nav class="nav-container">
+            <h1>Green Hydrogen</h1>
+            <ul>
+                <li><a href="{{ url_for('index')}}">Menu</a></li>
+                <li><a href="wind">Wind Power</a></li>
+                <li><a href="solar">Solar Energy</a></li>
+                <li><a href="hydrogen">Green Hydrogen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="principal">       
+
+            <!-- Definition section with a flip card layout -->
+            <section id="definition" class="content-section ">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front side of the flip card -->
+                        <div class="flip-card-front">
+                            <img src="/static/Images/GreenHydrogenIntro.jpg" alt="Green Hydrogen">
+                            <p>Green hydrogen is a type of hydrogen fuel that is produced through the electrolysis of water using electricity derived exclusively from renewable energy sources such as solar, wind, or hydropower. During the electrolysis process, water (H₂O) is split into hydrogen (H₂) and oxygen (O₂), and because no fossil fuels are used and no greenhouse gases are emitted, the hydrogen produced is considered completely clean and environmentally friendly.</p>
+                        </div>
+                        <!-- Back side of the flip card -->
+                        <div class="flip-card-back">
+                            <p>This form of hydrogen is gaining increasing attention as a key component in the transition to a low-carbon economy. It can be used in various sectors, including transportation (especially in fuel-cell vehicles), heavy industry (such as steel and cement production), power generation, and as an energy storage solution. Although green hydrogen is currently more expensive to produce than hydrogen derived from fossil fuels (grey or blue hydrogen), ongoing advancements in technology and falling renewable energy costs are making it increasingly viable as a large-scale, sustainable energy solution.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section explaining how green hydrogen works -->
+            <section id="HowItWorks" class="content-section">
+                <h2>How Does Green Hydrogen Work?</h2>
+                <ol>
+                    <li><strong>Electricity Generation from Renewables:</strong> Renewable energy sources such as solar panels or wind turbines generate clean electricity.</li>
+                    <li><strong>Electrolysis of Water:</strong> This electricity powers an <em>electrolyzer</em>, a device that splits water into hydrogen and oxygen through an electrochemical reaction (2H₂O → 2H₂ + O₂).</li>
+                    <li><strong>Hydrogen Collection:</strong> The resulting hydrogen gas is captured, stored, and can later be used as a fuel or feedstock.</li>
+                    <li><strong>Oxygen Release:</strong> The oxygen produced is typically released into the atmosphere or captured for other industrial uses.</li>
+                    <li><strong>Hydrogen Usage:</strong> 
+                        <ul>
+                            <li><strong>Transportation:</strong> Fuel-cell vehicles convert hydrogen back into electricity to power electric motors.</li>
+                            <li><strong>Industry:</strong> Used in refining, steel production, and ammonia synthesis.</li>
+                            <li><strong>Energy Storage:</strong> Can store excess renewable energy and be converted back into electricity when needed.</li>
+                        </ul>
+                    </li>
+                </ol>               
+            </section>
+
+            <!-- Section listing the benefits of green hydrogen -->
+            <section id="Advantages" class="content-section">
+                <h2>Green Hydrogen Advantages</h2>                    
+                <ul>
+                    <li><strong>Zero Carbon Emissions:</strong> When produced using renewable energy, green hydrogen emits no greenhouse gases.</li>
+                    <li><strong>Abundant and Renewable:</strong> Hydrogen is the most abundant element in the universe, and green production relies on renewable sources.</li>
+                    <li><strong>Energy Storage:</strong> Hydrogen can store surplus renewable energy and be used when solar or wind output is low.</li>
+                    <li><strong>Versatile Applications:</strong> Usable in electricity generation, transportation, heating, and industrial processes.</li>
+                    <li><strong>Supports Decarbonization:</strong> Essential for reducing emissions in hard-to-electrify sectors like heavy industry and aviation.</li>
+                    <li><strong>Promotes Energy Independence:</strong> Reduces reliance on fossil fuel imports and enhances national energy security.</li>
+                    <li><strong>Can Use Existing Infrastructure:</strong> Hydrogen can be transported through retrofitted natural gas pipelines in some cases.</li>
+                    <li><strong>Stimulates Innovation and Jobs:</strong> Encourages investment in new technologies and the development of a green economy workforce.</li>
+                </ul>
+            </section>
+
+            <!-- Section showing where and how green hydrogen is being implemented -->
+            <section id="Current Implementation" class="content-section">
+                <h2>Green Hydrogen Implementation</h2>
+                <ul>
+                    <li><strong>Electrolysis Plants:</strong> Renewable-powered facilities are being built to produce green hydrogen by splitting water into hydrogen and oxygen.</li>
+                    <li><strong>Transportation Sector:</strong> Green hydrogen is used to fuel hydrogen fuel cell electric vehicles (FCEVs), especially in buses, trucks, and trains.</li>
+                    <li><strong>Industrial Use:</strong> Industries like steel and cement are beginning to replace fossil fuels with green hydrogen to decarbonize their processes.</li>
+                    <li><strong>Power Generation:</strong> Hydrogen is being blended with natural gas or used alone in turbines to produce electricity with lower emissions.</li>
+                    <li><strong>Energy Storage:</strong> Green hydrogen is stored and converted back to electricity or heat during times of low renewable energy production.</li>
+                    <li><strong>Export Projects:</strong> Countries with abundant renewable energy (e.g., Australia, Chile) are investing in hydrogen exports to regions with high energy demand.</li>
+                    <li><strong>Infrastructure Development:</strong> Pipelines, storage tanks, and refueling stations are being built to support hydrogen distribution and consumption.</li>
+                </ul>
+            </section>
+
+            <!-- Section with interactive chart options for hydrogen data -->
+            <section id="interactive-charts" class="content-section">
+                <h2>Green Hydrogen Charts</h2>
+                <div class="chart-buttons">
+                    <button data-chart="line">Line Chart</button>
+                    <button data-chart="bar">Bar Chart</button>
+                    <button data-chart="pie">Pie Chart</button>
+                    <button data-chart="scatter">Scatter Plot</button>
+                </div>
+
+                <!-- Placeholder where chart image will be displayed -->
+                <div class="chart-display">
+                    <img id="chartImage" src="" alt="Green Hydrogen" style="max-width: 100%; height: auto; display: none;">
+                    <p id="noChartMsg">Select a chart type above to display the graph.</p>
+                </div>
+            </section>
+        </main>  
+
+        <!-- Sidebar section with hydrogen facts -->
+        <aside id="windFacts">
+            <div>
+                <h2>Did You Know?</h2>
+            </div>                    
+            <article>
+                <img src="static/Images/Leading-GreenHydrogenProyect.webp" alt="Hydrogen Project">
+                <p>The largest operational green hydrogen project in the world as of now is Sinopec’s Kuqa plant, located in Xinjiang, China. It features a 260 megawatt (MW) electrolysis capacity and began producing green hydrogen in June 2023. The project uses solar energy to power the electrolysis process, which separates hydrogen from water.</p>
+            </article>
+            <article>
+                <img src="static/Images/Water_Vapor.webp" alt="Water Vapor">
+                <p>Green hydrogen generates only water vapor as a byproduct when used, making it a clean energy source. During production via electrolysis powered by renewable energy, the only byproduct is oxygen, which is harmless to the environment. </p>
+            </article>
+            <article>
+                <img src="static/Images/Cartagena_Refinery.avif" alt="Cartagena Refinery">
+                <p>Despite recent progress, green hydrogen still accounts for only a small portion of Colombia’s total production. In 2024, 76% of the hydrogen consumed was grey (from fossil fuels), 20% was blue (with carbon capture), and only 4% came from electrolysis, the method linked to green hydrogen. As a major initiative, Ecopetrol has announced the construction of the largest green hydrogen plant in Latin America at its Cartagena refinery. With an investment of approximately $28.5 million, the facility is expected to produce 800 tons of green hydrogen annually and begin operations in the first half of 2026.</p>
+            </article>
+
+            <!-- External links to learn more -->
+            <h3>Learn More:</h3>
+            <ul>
+                <li><a href="https://www.energy.gov/eere/fuelcells/hydrogen-fuel-basics" target="_blank">U.S. Department of Energy - Hydrogen Basics</a></li>
+                <li><a href="https://www.iea.org/reports/the-future-of-hydrogen" target="_blank">International Energy Agency - The Future of Hydrogen</a></li>
+            </ul>
+        </aside>                
+    </div>    
+
+    <!-- Footer section with copyright and theme toggle -->
+    <footer>
+        <p>&copy; 2025 Green Hydrogen. All rights reserved</p>
+        <button id="switchBackgroundColor" class="dark-mode-btn">🌙 Dark Mode</button>
+    </footer> 
+
+    <!-- JavaScript for interactivity -->
+    <script src="static/scriptProject.js"></script>  
+</body>
+</html>

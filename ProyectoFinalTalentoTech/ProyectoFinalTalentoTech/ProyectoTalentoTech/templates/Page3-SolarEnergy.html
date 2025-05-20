@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy</title>
+    <link rel="stylesheet" href="static/PageThreeStyle.css">
+</head>
+<body data-energy="solar">
+    <!-- Header section with logo and navigation -->
+    <header>
+        <div class="logo-container">
+            <img src="/static/Images/Solar_EneryIntro.webp" alt="Icon image">
+        </div>
+        <nav class="nav-container">
+            <h1>Solar Energy</h1>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Menu</a></li>
+                <li><a href="wind">Wind Power</a></li>
+                <li><a href="solar">Solar Energy</a></li>
+                <li><a href="hydrogen">Green Energy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="principal">
+            <!-- Definition and components of solar energy -->
+            <section id="definition" class="content-section">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                          <img src="/static/Images/SolarEnergy_Description.jpg" alt="Solar energy">
+                          <p>Solar energy is a form of renewable energy that originates from the radiation emitted by the sun. This energy can be harnessed and converted into usable forms such as electricity or thermal energy through various technologies. It is considered one of the cleanest, most abundant, and sustainable sources of energy available to humanity.</p>
+                      </div>
+                      <div class="flip-card-back">
+                        <h1>Main components of a photovoltaic (PV) system</h1>
+                        <img src="/static/Images/Solarenergy_components.jpg" alt="Solar Energy Components">                            
+                      </div>
+                    </div>
+                  </div>
+            </section>
+
+            <!-- Explanation of how solar energy works -->
+            <section id="HowItWorks" class="content-section">                
+                <div class="flip-card">
+                    <div class="flip-card-inner">                        
+                            <h2>How Does Solar Energy Work?</h2>
+                            <ol>
+                                <li><strong>Sunlight Hits Solar Panels:</strong> Solar panels are made up of photovoltaic (PV) cells, usually made from silicon. When sunlight hits these cells, it excites the electrons inside them.</li>
+                                <li><strong>Electric Current Is Generated:</strong> This movement of electrons creates a direct current (DC) of electricity. This is the basic principle of the photovoltaic effect.</li>
+                                <li><strong>Inverter Converts DC to AC:</strong> Most homes and businesses use alternating current (AC) electricity. So the DC electricity flows into an inverter, which converts it into usable AC power.</li>
+                                <li><strong>Electricity Powers Your Devices:</strong> The converted AC electricity is sent to your electrical panel, where it powers your lights, appliances, and other devices.</li>
+                                <li><strong>Excess Energy Can Be Stored or Shared:</strong> If you produce more electricity than you use, it can be stored in batteries for later. Or, it can be sent to the electric grid, and in many places, you get credits or payments (this is called net metering).</li>
+                            </ol>                     
+                    </div>
+                </div>             
+            </section>
+
+            <!-- Benefits of using solar energy -->
+            <section id="Advantages" class="content-section">
+                <h2>Advantages</h2>                    
+                <ul>
+                    <li><strong>Renewable Energy Source:</strong> Solar energy is available every day and will never run out as long as the sun exists.</li>
+                    <li><strong>Reduces Electricity Bills:</strong> By generating your own power, you can significantly lower your electricity costs.</li>
+                    <li><strong>Low Maintenance Costs:</strong> Solar systems generally require minimal maintenance — just occasional cleaning and periodic checks.</li>
+                    <li><strong>Environmentally Friendly:</strong> Solar power generation does not release greenhouse gases, making it a clean and green energy source.</li>
+                    <li><strong>Energy Independence:</strong> Producing your own electricity reduces reliance on external energy suppliers.</li>
+                    <li><strong>Versatile Applications:</strong> Solar energy can be used for electricity, heating, powering remote areas, desalinating water, and even fueling satellites.</li>
+                    <li><strong>Increases Property Value:</strong> Homes with solar panels can have higher market value and attract more buyers.</li>
+                    <li><strong>Job Creation:</strong> The solar industry creates thousands of jobs in manufacturing, installation, and maintenance.</li>
+                </ul>
+            </section>
+
+            <!-- Real-world applications of solar energy -->
+            <section id="Current Implementation" class="content-section">
+                <h2>Current Applications of Solar Energy</h2>
+                <p>The implementation of solar energy has seen significant advancements in recent years, with an increasing number of homes, businesses, and industries adopting solar power as a reliable and sustainable energy source. Solar panels are now widely implemented for electricity generation, reducing dependency on fossil fuels and minimizing environmental impact. Additionally, solar technology is being implemented in applications such as water heating, desalination in remote areas, and even powering satellites in space. As governments and organizations continue to prioritize renewable energy solutions, the implementation of solar energy systems is expected to play a critical role in addressing global energy challenges and reducing carbon emissions.</p>
+            </section>
+
+            <!-- Interactive chart buttons and display area -->
+            <section id="interactive-charts" class="content-section">
+                <h2>Interactive Solar Energy Charts</h2>
+
+                <div class="chart-buttons">
+                    <button data-chart="line">Line Chart</button>
+                    <button data-chart="bar">Bar Chart</button>
+                    <button data-chart="pie">Pie Chart</button>
+                    <button data-chart="scatter">Scatter Plot</button>
+                </div>
+
+                <div class="chart-display">
+                    <img id="chartImage" src="" alt="Solar Energy Chart" style="max-width: 100%; height: auto; display: none;">
+                    <p id="noChartMsg">Select a chart type above to display the graph.</p>
+                </div>
+            </section> 
+        </main>  
+
+        <!-- Aside section with interesting facts and external links -->
+        <aside id="windFacts">
+            <div>
+                <h2>Did You Know?</h2>
+            </div>                    
+            <article>
+                <img src="static/Images/Solar_EnergyAside01.jpg" alt="Wind Farm">
+                <p>The sun delivers more energy to Earth in one hour than the entire world uses in a year.
+                    That's enough energy to power everything — if we could only capture and store it efficiently!</p>
+            </article>
+            <article>
+                <img src="static/Images/Solar_EnergyAside02Park.jpg" alt="Largest Wind Turbine">
+                <p>The largest solar power plant currently in operation is the Midong Solar Power Plant in Xinjiang, China, with a capacity of 3.5 gigawatts and covering approximately 33,000 acres. It produces around 6.09 billion kilowatt-hours of electricity per year, enough to power an entire country like Papua New Guinea. </p>
+            </article>
+            <article>
+                <img src="static/Images/SolarPark_Colombia.avif" alt="Offshore Wind Farm">
+                <p>The La Loma Solar Park, located in the municipality of El Paso in the Cesar department, is currently the largest solar power plant in Colombia. Developed by Enel Green Power Colombia, it was officially inaugurated in February 2024. The facility boasts an installed capacity of 187 megawatts (MW) and comprises over 400,000 bifacial solar panels spread across approximately 437 hectares. These panels are mounted on automated tracking systems that follow the sun's movement to maximize energy capture throughout the day.</p>
+            </article>
+            <h3>Learn More:</h3>
+            <ul>
+                <li><a href="https://www.energy.gov/eere/wind" target="_blank">U.S. Department of Energy - Wind</a></li>
+                <li><a href="https://www.globalwindday.org" target="_blank">Global Wind Day</a></li>
+            </ul>
+        </aside>                
+    </div>    
+
+    <!-- Footer with external solar resources and dark mode button -->
+    <footer>
+        <p>&copy; 2025 Solar Energy Solutions. All rights reserved</p>
+        <ul>
+            <li><a href="https://www.energy.gov/eere/solar/solar-energy-technologies-office" target="_blank">U.S. Department of Energy - Solar Office</a></li>
+            <li><a href="https://www.nrel.gov/solar/" target="_blank">National Renewable Energy Laboratory - Solar</a></li>
+        </ul>
+        <button id="switchBackgroundColor" class="dark-mode-btn">🌙 Dark Mode</button>
+    </footer>
+
+    <!-- JavaScript file for chart and UI interactions -->
+    <script src="static/scriptProject.js"></script>  
+</body>
+</html>

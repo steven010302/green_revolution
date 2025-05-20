@@ -1,0 +1,483 @@
+/* Root variables: define colors and fonts for both light and dark themes */
+:root {
+    --primary-color: rgb(227, 242, 245);
+    --secondary-color: rgb(65, 115, 153);
+    --third-color: rgb(37, 55, 73);
+    --text-color: rgb(6, 29, 56);
+    --secondary-text-color: black;
+
+    --primary-dark: rgb(32, 55, 73);
+    --secondary-dark: rgb(4, 21, 36);
+    --third-dark: rgb(81, 93, 104);
+    --text-dark: rgb(149, 149, 156);
+    --secondary-text-dark: rgb(29, 42, 49);
+
+    --font-main: Arial, sans-serif;
+    --bg-light: #f1f1f1;
+}
+
+/* Text alignment for paragraphs and list items */
+p, li {
+  text-align: justify;
+}
+
+/* Dark theme styles for main elements */
+body.dark-theme {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme header,
+body.dark-theme aside#windFacts,
+body.dark-theme footer {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-dark);    
+}
+
+body.dark-theme .content-section {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Dark theme for main content and side articles */
+body.dark-theme main#principal {
+    background-color: var(--third-dark);
+}
+
+body.dark-theme aside article {
+    background-color: var(--third-dark);
+    color: var(--secondary-text-dark);
+}
+
+div.container.dark-theme {
+    background-color: var(--secondary-dark);
+}
+
+/* General layout and font styles */
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Flex container layout */
+.container {
+    display: flex;
+    flex: 1;
+    margin: 20px 0;
+}
+
+/* Main content area styling */
+main#principal {
+    flex: 1;
+    background: var(--secondary-color);
+    padding: 20px;
+}
+
+/* Header layout and color */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    padding: 0 40px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+
+/* Logo image size */
+.logo-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Navigation section */
+.nav-container {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-container h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation list */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* Navigation links */
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Content section style */
+.content-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Section for definitions with image */
+#definition {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#definition img {
+    width: 400px;
+    height: 230px;
+}
+
+/* Sidebar styles */
+aside#windFacts {
+    width: 20%;
+    background-color: var(--third-color);
+    padding: 15px;
+}
+
+aside#windFacts div h2 {
+    color: var(--bg-light);
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-dark);
+}
+
+aside#windFacts img {
+    width: 280px;
+    height: 220px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+aside#windFacts article p {
+    color: var(--bg-light);
+    text-align: justify;
+    padding: 0 5%;
+}
+
+/* Footer style */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Button design */
+button {
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+/* Hover effect for content sections */
+.content-section:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
+
+/* Flip card styles */
+#definition {
+    perspective: 1000px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Flip card container */
+.flip-card {
+    width: 100%;
+    position: relative;
+}
+
+.flip-card-inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    min-height: 230px;
+}
+
+/* Front and back of the flip card */
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    min-height: 230px;
+}
+
+.flip-card-front {
+    z-index: 2;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+#definition.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 230px;
+    height: 230px;
+}
+
+/* Responsive layout for tablets */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .nav-container h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  aside#windFacts {
+    width: 100%;
+    order: 2;
+  }
+
+  main#principal {
+    order: 1;
+  }
+
+  aside#windFacts img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-section {
+    margin: 10px;
+  }
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+  #definition {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flip-card {
+    width: 100%;
+  }
+
+  .flip-card-inner {
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    min-height: auto;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .flip-card img {
+    width: 80%;
+    height: auto;
+  }
+
+  .flip-card-front p,
+  .flip-card-back p {
+    padding: 10px;
+    text-align: justify;
+  }
+
+  .chart-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* Dark theme for flip cards */
+body.dark-theme .flip-card-front,
+body.dark-theme .flip-card-back {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #definition {
+    background-color: var(--secondary-dark);
+}
+
+body.dark-theme .flip-card-front p,
+body.dark-theme .flip-card-back h1 {
+    color: var(--text-dark);
+}
+
+.flip-card-front p,
+.flip-card-back h1 {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Interactive chart section */
+#interactive-charts {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+#interactive-charts h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.chart-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #3a73b4;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chart-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.chart-display {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#noChartMsg {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Dark theme for chart section */
+body.dark-theme #interactive-charts {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #interactive-charts h2 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .chart-display {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #noChartMsg {
+    color: var(--text-dark);
+}

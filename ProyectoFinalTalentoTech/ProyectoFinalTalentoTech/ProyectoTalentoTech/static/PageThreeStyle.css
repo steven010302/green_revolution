@@ -1,0 +1,473 @@
+/* Define CSS variables for colors and fonts */
+:root {
+    --primary-color: rgb(248, 245, 235);
+    --secondary-color: rgb(212, 153, 76);
+    --third-color: rgb(163, 117, 47);
+    --text-color: rgb(14, 12, 4);
+    --secondary-text-color: rgb(14, 12, 2);
+
+    --primary-dark: rgb(85, 66, 14);
+    --secondary-dark: rgb(4, 21, 36);
+    --third-dark: rgb(81, 93, 104);
+    --text-dark: rgb(149, 149, 156);
+    --secondary-text-dark: rgb(29, 42, 49);
+
+    --font-main: Arial, sans-serif;
+    --bg-light: #f1f1f1;
+}
+
+/* Align paragraphs and list items with justified text */
+p, li {
+    text-align: justify;
+}
+
+/* Dark theme for general elements */
+body.dark-theme {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+/* Dark theme for specific containers */
+body.dark-theme header,
+body.dark-theme aside#windFacts,
+body.dark-theme footer {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-dark);    
+}
+
+body.dark-theme .content-section {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Dark theme for main content area */
+body.dark-theme main#principal {
+    background-color: var(--third-dark);
+}
+
+/* Dark theme for articles in aside */
+body.dark-theme aside article {
+    background-color: var(--third-dark);
+    color: var(--secondary-text-dark);
+}
+
+/* Dark theme for container */
+div.container.dark-theme {
+    background-color: var(--secondary-dark);
+}
+
+/* General page styling */
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Layout for main container */
+.container {
+    display: flex;
+    flex: 1;
+    margin: 20px 0;
+}
+
+/* Main section styling */
+main#principal {
+    flex: 1;
+    background: var(--secondary-color);
+    padding: 20px;
+}
+
+/* Header layout */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    padding: 0 40px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+
+/* Logo size */
+.logo-container img {
+    width: 120px;
+    height: auto;
+}
+
+/* Center align nav text */
+.nav-container {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-container h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Content box styling */
+.content-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Definition section with image */
+#definition {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#definition img {
+    width: 400px;
+    height: 230px;
+}
+
+/* Sidebar with wind facts */
+aside#windFacts {
+    width: 20%;
+    background-color: var(--third-color);
+    padding: 15px;
+}
+
+/* Section titles in aside */
+aside#windFacts div h2 {
+    color: var(--bg-light);
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-dark);
+}
+
+/* Images inside aside */
+aside#windFacts img {
+    width: 280px;
+    height: 220px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Text inside articles in aside */
+aside#windFacts article p {
+    color: var(--bg-light);
+    text-align: justify;
+    padding: 0 5%;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Button styling */
+button {
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+/* Hover effect for content sections */
+.content-section:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
+
+/* Flip card container */
+#definition {
+    perspective: 1000px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+/* Flip card box */
+.flip-card {
+    width: 100%;
+    position: relative;
+}
+
+/* Inner container with transition */
+.flip-card-inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    min-height: 230px;
+}
+
+/* Front and back of flip card */
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    min-height: 230px;
+}
+
+/* Show front side */
+.flip-card-front {
+    z-index: 2;
+}
+
+/* Back side rotated */
+.flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+/* Flip animation trigger */
+#definition.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Flip card image size */
+.flip-card img {
+    width: 230px;
+    height: 230px;
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .nav-container h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    aside#windFacts {
+        width: 100%;
+        order: 2;
+    }
+
+    main#principal {
+        order: 1;
+    }
+
+    aside#windFacts img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content-section {
+        margin: 10px;
+    }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    #definition {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flip-card {
+        width: 100%;
+    }
+
+    .flip-card-inner {
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        min-height: auto;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .flip-card img {
+        width: 80%;
+        height: auto;
+    }
+
+    .flip-card-front p,
+    .flip-card-back p {
+        padding: 10px;
+        text-align: justify;
+    }
+}
+
+/* Flip card dark theme styling */
+body.dark-theme .flip-card-front,
+body.dark-theme .flip-card-back {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #definition {
+    background-color: var(--secondary-dark);
+}
+
+body.dark-theme .flip-card-front p,
+body.dark-theme .flip-card-back h1 {
+    color: var(--text-dark);
+}
+
+.flip-card-front p,
+.flip-card-back h1 {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Interactive chart section styling */
+#interactive-charts {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Dark mode for chart section */
+body.dark-theme #interactive-charts {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme .chart-display {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+/* Chart section title */
+#interactive-charts h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Chart buttons container */
+.chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Individual chart buttons */
+.chart-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #3a73b4;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chart-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Container for displaying charts */
+.chart-display {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Message shown if no chart is available */
+#noChartMsg {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}

@@ -1,0 +1,338 @@
+/* ==== Global Variables ==== */
+:root {
+    --font-main: Arial, sans-serif;
+
+    /* Light Theme Colors */
+    --primary-color: rgb(248, 252, 247);
+    --secondary-color: rgb(71, 112, 72);
+    --third-color: rgb(71, 112, 72);
+    --text-color: rgb(16, 17, 16);
+
+    --gray-warm-light: #f1f1f1;
+    --gray-warm-surface: #6fa073;
+    --gray-warm-hover: #48724a;
+
+    /* Dark Theme Colors */
+    --primary-dark: #0e0e0e;
+    --secondary-dark: #455846;
+    --third-dark: #455846;
+    --text-dark: #d0f0dc;
+}
+
+/* ==== Global Reset ==== */
+* {
+    box-sizing: border-box; /* Include padding and border in element width/height */
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== Body Styling ==== */
+body {
+    font-family: var(--font-main);
+    background-color: var(--gray-warm-light); /* Light background */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Dark Theme for Body */
+body.dark-theme {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+/* ==== Navbar Styling ==== */
+.custom-nav {
+    background-color: var(--third-color);
+    height: 120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav-title {
+    color: var(--primary-color);
+    margin-right: 30%;
+    font-weight: bold;
+}
+
+/* Dark Theme Navbar */
+body.dark-theme .custom-nav {
+    background-color: var(--secondary-dark) !important;
+}
+
+body.dark-theme .nav-title {
+    color: var(--text-dark);
+}
+
+/* ==== Buttons ==== */
+button, form button[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+form button[type="submit"]:hover {
+    background-color: var(--gray-warm-hover);
+    color: black;
+}
+
+/* ==== Bootstrap Overrides for Dark Theme Buttons ==== */
+body.dark-theme .btn-secondary {
+    background-color: var(--secondary-dark) !important;
+    color: var(--text-dark) !important;
+    border-color: var(--secondary-dark) !important;
+}
+
+body.dark-theme .btn-secondary:hover {
+    background-color: var(--gray-warm-hover) !important;
+    color: black !important;
+}
+
+/* ==== Footer Styling ==== */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Footer in Dark Theme */
+body.dark-theme footer {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+footer ul {
+    padding: 0;
+    margin-top: 10px;
+}
+
+footer ul li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+footer ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ==== Carousel Styling ==== */
+.carousel {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner,
+.carousel-item {
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.02); /* Zoom effect on hover */
+}
+
+body.dark-theme .carousel-item img {
+    filter: brightness(0.85); /* Darker images in dark mode */
+}
+
+/* Carousel indicators and controls */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--secondary-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--third-color);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* ==== Project Overview Section ==== */
+.project-overview {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #b0c5b0;
+    color: #000000;
+}
+
+.project-overview h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Title color in dark mode */
+body.dark-theme .project-overview  h2 {
+    color: var(--text-dark);
+}
+
+.project-overview .overview-box {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Dark mode for project overview section */
+body.dark-theme .project-overview {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-theme .project-overview .overview-box {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+/* ==== Overview Boxes Layout ==== */
+.overview-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.overview-box {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: justify;
+}
+
+.overview-box h3 {
+    color: var(--third-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+body.dark-theme .project-overview .overview-box h3 {    
+    color: var(--text-dark);
+}
+
+/* ==== Dropdown Menu (Dark Theme) ==== */
+body.dark-theme .dropdown-menu {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme .dropdown-item {
+    color: var(--text-dark);
+}
+
+body.dark-theme .dropdown-item:hover,
+body.dark-theme .dropdown-item:focus {
+    background-color: var(--secondary-dark);
+    color: var(--primary-dark);
+}
+
+/* ==== Responsive Carousel ==== */
+@media (max-width: 1024px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+
+    .overview-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .overview-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 200px;
+    }
+}
+
+/* ==== Energy Consumption Form Section ==== */
+section#EnergyConsumption {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #b6c2b8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form elements */
+form fieldset {
+    border: none;
+}
+
+form legend {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #9cb4a5;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
